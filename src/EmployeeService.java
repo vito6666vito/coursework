@@ -12,42 +12,48 @@ public class EmployeeService {
     }
 
     public static int minSalaryId(Employee[] person) {
-        int minSalary = 59000;
-        for (int i = 0; i < person.length; i++) {
+        int minSalary = person[0].getSalary();
+        for (int i = 0; i != person.length; i++) {
             if (person[i] != null) {
                 if (person[i].getSalary() < minSalary) {
-                    minSalary = person[i].getId();
+                    minSalary = person[i].getSalary();
+                    System.out.println("Id сотрудника с минимальной заработной платой: " + person[i].getId());
                 }
             }
         }
-        System.out.println("Id сотрудника с минимальной заработной платой: " + minSalary);
+
         return minSalary;
+
     }
 
     public static int maxSalaryId(Employee[] person) {
-        int maxSalary = -1;
-        int maxId = 0;
-        for (int l = 0; l < person.length; l++) {
-            if (person[l] != null) {
-                if (person[l].getSalary() > maxSalary) {
-                    maxSalary = person[l].getSalary();
-                    maxId = person[l].getId();
+        int maxSalary = person[9].getSalary();
+        for (int i = 0; i < person.length; i++) {
+            if (person[i] != null) {
+                if (person[i].getSalary() > maxSalary) {
+                    maxSalary = person[i].getSalary();
+                    System.out.println("Id сотрудника с максимальной заработной платой: " + person[i].getId());
                 }
             }
         }
-        System.out.println("Id сотрудника с максимальной заработной платой: " + maxId);
         return maxSalary;
     }
 
     public static double middleSalary(Employee[] person) {
         double middleSalary = 0;
-        for (int i = 0; i < person.length; i++) {
+        if (person.length > 0) {
+            int i = 0;
             if (person[i] != null) {
-                middleSalary += person[i].getSalary() / 10;
+                int sum = 0;
+                for (i = 0; i < person.length; i++) {
+                    sum += person[i].getSalary();
+                }
+                middleSalary = sum / person.length;
             }
         }
         System.out.println("Среднее значение зарботной платы: " + middleSalary + " рублей");
         return middleSalary;
+
     }
 
     public static String fioEmployees(Employee[] person) {
