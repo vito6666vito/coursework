@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         EmployeeService employeeService = new EmployeeService();
         Employee[] person = new Employee[10];
-        person[0] = new Employee("F1 I1 O1", 2, 31450);
-        person[1] = new Employee("F2 I2 O2", 2, 31400);
+        person[0] = new Employee("F1 I1 O1", 2, 31600);
+        person[1] = new Employee("F2 I2 O2", 2, 50000);
         person[2] = new Employee("F3 I3 O3", 3, 40200);
         person[3] = new Employee("F4 I4 O4", 5, 60000);
         person[4] = new Employee("F5 I5 O5", 3, 40200);
